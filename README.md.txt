@@ -12,7 +12,7 @@ Este curso está diseñado para guiarte paso a paso en tu iniciación al Reiki, 
 - **Módulo 2**: [Historia del Reiki y Mikao Usui](Modulos/modulo2.html) ✅
 - **Módulo 3**: [Autotratamiento Reiki](Modulos/modulo3.html) ✅
 - **Módulo 4**: [¿Qué es un Tratamiento Reiki?](Modulos/modulo4.html) ✅
-- **Módulo 5**: Los Cinco Principios del Reiki *(Próximamente)*
+- **Módulo 5**: [Los Cinco Principios del Reiki](Modulos/modulo5.html) ✅
 - **Módulo 6**: Reiki para Animales y Plantas *(Próximamente)*
 
 ## 🌐 Acceso al Curso
@@ -53,6 +53,12 @@ Visita: [https://belenguarnieri.github.io/reiki-curso-nivel1](https://belenguarn
 - Preparación del espacio sagrado
 - Ejercicio práctico con feedback
 
+### Módulo 5 - Los Cinco Principios
+- Los principios de Mikao Usui explicados
+- Integración en la vida cotidiana
+- Meditaciones guiadas específicas
+- Ejercicios de aplicación práctica
+
 ## 🙏 Filosofía del Curso
 
 > "No soy quien sana: soy canal para que la energía recuerde su camino."
@@ -61,10 +67,10 @@ Este curso honra la tradición del Reiki Usui mientras adapta las enseñanzas pa
 
 ## 🌟 Próximas Actualizaciones
 
-- [ ] Módulo 5: Los Cinco Principios del Reiki  
 - [ ] Módulo 6: Reiki para Animales y Plantas
 - [ ] Sección de testimonios
 - [ ] Biblioteca de recursos adicionales
+- [ ] Certificado de finalización
 
 ---
 *Con amor y luz para tu camino de sanación* 🕯️
