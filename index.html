@@ -228,130 +228,115 @@
         }
         
         .additional-materials {
-            margin: 50px 0;
-            text-align: center;
-        }
-        
-        .materials-header {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-        
-        .materials-header h2 {
-            color: #8b7765;
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .materials-header p {
-            color: #5d4e75;
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.6;
+            margin: 30px 0;
         }
         
         .material-card {
-            background: linear-gradient(135deg, rgba(255, 234, 167, 0.3), rgba(253, 121, 168, 0.2));
-            border: 3px solid #fd79a8;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
-            padding: 40px;
-            max-width: 600px;
-            margin: 0 auto;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
+            border: 3px solid #28a745;
         }
         
         .material-card::before {
-            content: '📔';
+            content: '';
             position: absolute;
-            top: -10px;
-            right: -10px;
-            font-size: 4rem;
-            opacity: 0.1;
-            transform: rotate(15deg);
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+        }
+        
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(40, 167, 69, 0.2);
+        }
+        
+        .material-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .material-card h3 {
             color: #8b7765;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 12px;
+            gap: 10px;
         }
         
         .material-card .material-subtitle {
-            color: #fd79a8;
-            font-size: 1.1rem;
-            font-style: italic;
-            margin-bottom: 20px;
+            color: #28a745;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
         }
         
         .material-description {
             color: #5d4e75;
-            font-size: 1rem;
-            margin-bottom: 25px;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
             line-height: 1.6;
         }
         
         .material-features {
             list-style: none;
-            margin-bottom: 30px;
-            text-align: left;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 8px;
         }
         
         .material-features li {
             color: #5d4e75;
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-            padding-left: 25px;
+            font-size: 0.9rem;
+            padding-left: 20px;
             position: relative;
         }
         
         .material-features li::before {
-            content: '✨';
+            content: '✦';
             position: absolute;
             left: 0;
+            color: #28a745;
         }
         
         .download-button {
             display: inline-block;
             background: linear-gradient(135deg, #28a745, #20c997);
             color: white;
-            padding: 15px 35px;
-            border-radius: 30px;
+            padding: 12px 25px;
+            border-radius: 25px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.95rem;
         }
         
         .download-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(40, 167, 69, 0.4);
-            background: linear-gradient(135deg, #20c997, #28a745);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
         }
         
         .download-button::before {
             content: '📥 ';
-            margin-right: 8px;
+            margin-right: 5px;
         }
             .main-logo {
                 font-size: 2rem;
@@ -499,12 +484,8 @@
         </main>
         
         <section class="additional-materials">
-            <div class="materials-header">
-                <h2>📔 Material Adicional</h2>
-                <p>Recursos complementarios para enriquecer tu práctica de Reiki</p>
-            </div>
-            
             <div class="material-card">
+                <div class="material-badge">Material Adicional</div>
                 <h3>📝 Cuaderno Personal de Reiki</h3>
                 <p class="material-subtitle">Tu compañero de práctica y evolución espiritual</p>
                 <p class="material-description">
