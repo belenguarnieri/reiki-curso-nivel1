@@ -8,27 +8,63 @@ Este curso está diseñado para guiarte paso a paso en tu iniciación al Reiki, 
 
 ## 📚 Módulos Disponibles
 
-- **Módulo 1**: [Bienvenida e Introducción al Reiki](modulos/modulo1.html) ✅
-- **Módulo 2**: [Historia del Reiki y Mikao Usui](modulos/modulo2.html) ✅
-- **Módulo 3**: [Autotratamiento Reiki](modulos/modulo3.html) ✅
-- **Módulo 4**: Los Cinco Principios del Reiki *(Próximamente)*
-- **Módulo 5**: Tratamiento a Otros *(Próximamente)*
+- **Módulo 1**: [Bienvenida e Introducción al Reiki](Modulos/modulo1.html) ✅
+- **Módulo 2**: [Historia del Reiki y Mikao Usui](Modulos/modulo2.html) ✅
+- **Módulo 3**: [Autotratamiento Reiki](Modulos/modulo3.html) ✅
+- **Módulo 4**: [¿Qué es un Tratamiento Reiki?](Modulos/modulo4.html) ✅
+- **Módulo 5**: Los Cinco Principios del Reiki *(Próximamente)*
 - **Módulo 6**: Reiki para Animales y Plantas *(Próximamente)*
 
 ## 🌐 Acceso al Curso
 
-Una vez publicado, estará disponible en: https://tu-usuario.github.io/reiki-curso-nivel1
+Visita: [https://belenguarnieri.github.io/reiki-curso-nivel1](https://belenguarnieri.github.io/reiki-curso-nivel1)
 
 ## 💡 Cómo Usar Este Curso
 
-1. Comienza por el Módulo 1 y avanza secuencialmente
-2. Dedica tiempo a cada módulo antes de continuar
-3. Mantén un cuaderno Reiki para registrar tus experiencias
-4. Practica regularmente los ejercicios propuestos
+1. **Comienza por el Módulo 1** y avanza secuencialmente
+2. **Dedica tiempo suficiente** a cada módulo antes de continuar
+3. **Mantén un cuaderno Reiki** para registrar tus experiencias
+4. **Practica regularmente** los ejercicios propuestos
+5. **Participa activamente** en las meditaciones y rituales
+
+## 🎯 Lo que Aprenderás
+
+### Módulo 1 - Bienvenida e Introducción
+- Qué es Reiki y para qué sirve
+- Crear tu carta de intención personal
+- Meditación de apertura energética
+- Ritual de inicio del camino
+
+### Módulo 2 - Historia del Reiki
+- La vida y búsqueda de Mikao Usui
+- El linaje Reiki hasta nuestros días
+- Conexión espiritual con las raíces
+- Ritual de honrar tu herencia
+
+### Módulo 3 - Autotratamiento
+- Técnica completa paso a paso
+- Posiciones de manos y chakras
+- Diario de práctica personal
+- Desarrollo de la sensibilidad energética
+
+### Módulo 4 - Tratamiento a Otros
+- Fundamentos de una sesión Reiki
+- Posiciones de manos completas
+- Preparación del espacio sagrado
+- Ejercicio práctico con feedback
 
 ## 🙏 Filosofía del Curso
 
-> "Cuando Reiki entra en tu vida, no estás aprendiendo algo nuevo… estás recordando algo que siempre estuvo en ti."
+> "No soy quien sana: soy canal para que la energía recuerde su camino."
+
+Este curso honra la tradición del Reiki Usui mientras adapta las enseñanzas para el estudiante moderno, con un enfoque práctico y amoroso.
+
+## 🌟 Próximas Actualizaciones
+
+- [ ] Módulo 5: Los Cinco Principios del Reiki  
+- [ ] Módulo 6: Reiki para Animales y Plantas
+- [ ] Sección de testimonios
+- [ ] Biblioteca de recursos adicionales
 
 ---
 *Con amor y luz para tu camino de sanación* 🕯️
