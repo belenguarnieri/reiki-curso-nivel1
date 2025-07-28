@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiki Usui Nivel 1 - Módulo 4</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #5d4e75;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 20px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Página de portada */
+        .cover-page {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 50%, #e17055 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40mm;
+            position: relative;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .main-logo {
+            background: rgba(139, 119, 101, 0.9);
+            border-radius: 120px;
+            padding: 60px 50px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .main-logo h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .main-logo h2 {
+            color: white;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+        
+        .module-title {
+            background: rgba(255,255,255,0.9);
+            padding: 20px 40px;
+            border-radius: 25px;
+            margin-top: 40px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .module-title h3 {
+            color: #8b7765;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        /* Páginas de contenido */
+        .content-page {
+            padding: 25mm;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 30%, #e17055 100%);
+            position: relative;
+        }
+        
+        .content-page::before {
+            content: '';
+            position: absolute;
+            top: 15mm;
+            left: 15mm;
+            right: 15mm;
+            bottom: 15mm;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            z-index: 1;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #fd79a8;
+        }
+        
+        .page-header h1 {
+            color: #8b7765;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .page-header h2 {
+            color: #fd79a8;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #8b7765;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-subtitle {
+            color: #fd79a8;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        
+        .text-content {
+            color: #5d4e75;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(253, 121, 168, 0.1), rgba(225, 112, 85, 0.1));
+            border-left: 4px solid #fd79a8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .bullet-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .bullet-list li {
+            color: #5d4e75;
+            font-size: 14px;
+            margin-bottom: 8px;
+            list-style: none;
+            position: relative;
+        }
+        
+        .bullet-list li::before {
+            content: '♦';
+            position: absolute;
+            left: -20px;
+            color: #fd79a8;
+        }
+        
+        .exercise-box {
+            background: linear-gradient(135deg, rgba(255, 234, 167, 0.3), rgba(253, 121, 168, 0.2));
+            border: 2px dashed #fd79a8;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+        }
+        
+        .exercise-title {
+            color: #8b7765;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .video-link, .meditation-link {
+            background: linear-gradient(135deg, #fd79a8, #e17055);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-link:hover, .meditation-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(253, 121, 168, 0.4);
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #8b7765, #5d4e75);
+            color: white;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            text-align: center;
+            font-style: italic;
+            font-size: 16px;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .checklist {
+            background: rgba(255, 234, 167, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .checklist h4 {
+            color: #8b7765;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            color: #5d4e75;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #8b7765;
+            font-weight: bold;
+        }
+        
+        .step-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.8);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .step-table th {
+            background: linear-gradient(135deg, #8b7765, #5d4e75);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .step-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(253, 121, 168, 0.2);
+            font-size: 12px;
+            vertical-align: top;
+        }
+        
+        .step-table tr:nth-child(even) {
+            background: rgba(255, 234, 167, 0.1);
+        }
+        
+        .step-number {
+            background: #fd79a8;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .step-section {
+            background: rgba(253, 121, 168, 0.05);
+            border: 1px solid rgba(253, 121, 168, 0.3);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .step-section h4 {
+            color: #8b7765;
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .affirmation-box {
+            background: linear-gradient(135deg, rgba(139, 119, 101, 0.1), rgba(253, 121, 168, 0.1));
+            border: 2px solid #8b7765;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-style: italic;
+            text-align: center;
+            color: #8b7765;
+            font-weight: 500;
+        }
+        
+        .numbered-list {
+            counter-reset: section;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: section;
+            margin-bottom: 15px;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .numbered-list li::before {
+            content: counter(section);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #fd79a8;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .decorative-element {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #fd79a8;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .video-link, .meditation-link {
+                color: #fd79a8 !important;
+                background: transparent !important;
+                border: 2px solid #fd79a8 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Página de Portada -->
+    <div class="page cover-page">
+        <div class="main-logo">
+            <h1>REIKI USUI</h1>
+            <h2>Nivel 1</h2>
+        </div>
+        <div class="module-title">
+            <h3>MÓDULO 4: ¿QUÉ ES UN TRATAMIENTO REIKI?</h3>
+        </div>
+    </div>
+
+    <!-- Página 1: Introducción -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>⚹ ¿Qué es un Tratamiento Reiki?</h1>
+                <h2>Ser canal de sanación para otros</h2>
+            </div>
+            
+            <div class="quote-box" style="margin-bottom: 30px;">
+                "No soy quien sana: soy canal para que la energía recuerde su camino."
+            </div>
+            
+            <div class="highlight-box">
+                <div class="section-title">⚹ MÓDULO 4: ¿Qué es un Tratamiento Reiki?</div>
+                
+                <div class="section-subtitle">• Objetivo del módulo:</div>
+                <ul class="bullet-list">
+                    <li>Entender cómo funciona un tratamiento Reiki.</li>
+                    <li>Aprender a aplicar Reiki a otras personas desde la presencia y la ética.</li>
+                    <li>Desarrollar habilidades como canal energético responsable.</li>
+                    <li>Vivir una experiencia de dar y conectar energéticamente.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">♦ Contenido teórico y práctico</div>
+                
+                <div class="section-subtitle">1. ¿Qué es un Tratamiento Reiki?</div>
+                <div class="text-content">
+                    Un tratamiento es una canalización consciente de la energía universal hacia otra persona o ser vivo. Tú actúas como un canal limpio, desde el amor y la intención. Reiki fluye donde el receptor lo necesita, sin manipulación mental.
+                </div>
+                
+                <div class="section-subtitle">2. ¿Qué sucede durante una sesión?</div>
+                <ul class="bullet-list">
+                    <li><strong>Energéticamente:</strong> elimina bloqueos, armoniza chakras, revitaliza la energía.</li>
+                    <li><strong>Físicamente:</strong> induce relajación profunda, puede generar sensaciones térmicas o pulsaciones.</li>
+                    <li><strong>Emocionalmente:</strong> promueve liberación, claridad y bienestar interno.</li>
+                </ul>
+                
+                <div class="section-subtitle">3. Fundamentos esenciales</div>
+                <ul class="bullet-list">
+                    <li><strong>Consentimiento:</strong> siempre preguntar y esperar el permiso del receptor.</li>
+                    <li><strong>Intención consciente:</strong> "Que Reiki llegue donde sea necesario para el mayor bien."</li>
+                    <li><strong>Cierre y limpieza:</strong> higiene energética del espacio y del canal, visualización al finalizar.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 2: Preparación -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>※ Preparación para una sesión Reiki</h1>
+            </div>
+            
+            <div class="step-section">
+                <h4>✦ Preparación del practicante</h4>
+                <ol class="numbered-list">
+                    <li>Meditar en Gassho durante 3 minutos.</li>
+                    <li>Respirar conscientemente.</li>
+                    <li>Repetir mentalmente:</li>
+                </ol>
+                
+                <div class="affirmation-box">
+                    "Abro mi canal Reiki desde mi corazón para servir con amor y claridad."
+                </div>
+            </div>
+            
+            <div class="step-section">
+                <h4>◊ Preparación del entorno</h4>
+                <ul class="bullet-list">
+                    <li>Espacio tranquilo y limpio, con ventilación.</li>
+                    <li>Vela blanca y esencia suave (lavanda, sándalo, palo santo, etc.).</li>
+                    <li>Música relajante a 528 Hz o sonido tibetano.</li>
+                    <li>Elementos opcionales: cuarzos, flores frescas, tela blanca.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">※ Secuencia básica de tratamiento Reiki presencial</div>
+                
+                <ol class="numbered-list">
+                    <li><strong>Bienvenida y consentimiento:</strong> explicá brevemente qué es Reiki y preguntá si la persona desea recibirlo.</li>
+                    <li><strong>Invocación interna:</strong> <em>"Que esta energía fluya con sabiduría y compasión hacia el receptor, para su mayor bien."</em></li>
+                    <li><strong>Manos sobre el cuerpo</strong> (sin usar símbolos en Nivel 1)</li>
+                    <li><strong>Cierre</strong> con agradecimiento y corte del canal</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 3: Secuencia de Posiciones -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>⚹ Posiciones de las Manos</h1>
+                <h2>Secuencia completa de tratamiento</h2>
+            </div>
+            
+            <table class="step-table">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Zona anatómica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Cabeza (frente y nuca)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Garganta</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Corazón</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Plexo solar y abdomen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>Caderas e ingles</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6</strong></td>
+                        <td>Rodillas y tobillos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7</strong></td>
+                        <td>Pies o campo áurico (sin contacto)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="step-section">
+                <h4>◊ Cierre de la sesión:</h4>
+                <ul class="bullet-list">
+                    <li>Manos al corazón.</li>
+                    <li>Agradecimiento silencioso.</li>
+                    <li>Cortá visualmente el canal.</li>
+                    <li>Preguntá cómo se sintió la persona.</li>
+                    <li>Ofrecé agua y anotá sus comentarios.</li>
+                </ul>
+            </div>
+            
+            <div class="exercise-box">
+                <div class="exercise-title">※ Ejercicio práctico</div>
+                <div class="text-content">
+                    <strong>※ Realizá una sesión práctica con una persona de confianza.</strong>
+                </div>
+                <ul class="bullet-list">
+                    <li>Cuida el espacio y tu intención.</li>
+                    <li>Aplicá la secuencia completa de manos.</li>
+                    <li>Posteriormente, registrá en tu cuaderno Reiki:</li>
+                </ul>
+                <div style="margin-left: 20px;">
+                    <ul class="bullet-list">
+                        <li style="margin-left: 20px;">Sensaciones del receptor</li>
+                        <li style="margin-left: 20px;">Sensaciones tuyas como canal</li>
+                        <li style="margin-left: 20px;">Qué aprendiste de ese proceso</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 4: Videos y Cierre -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>▶ Videos y Recursos</h1>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">▶ Videos disponibles y recomendados</div>
+                
+                <div class="text-content">
+                    <strong>λ</strong> Excelente para entender el manejo de las posiciones del autotratamiento y la canalización personal en acción.
+                </div>
+                
+                <div class="text-content">
+                    <strong>λ</strong> Guía visual clara sobre cómo dar una sesión Reiki a otra persona, paso a paso.
+                </div>
+                
+                <div class="text-content">
+                    <strong>λ</strong> Ideal para explorar el Reiki sin presencia física y reforzar la importancia de la intención y el consentimiento.
+                </div>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="https://www.youtube.com/watch?v=vU_TqDYFGjM&t=7s" target="_blank" class="video-link">→ Video Tutorial 1</a>
+                    <a href="https://www.youtube.com/watch?v=Riw_zT1Ns7o" target="_blank" class="video-link">→ Video Tutorial 2</a>
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                ♦ Frase inspiradora del módulo:<br><br>
+                "No soy quien sana. Soy la presencia que recuerda que ya está todo en armonía."
+            </div>
+            
+            <div class="checklist">
+                <h4>✓ Actividades sugeridas</h4>
+                <ul>
+                    <li>Dar al menos <strong>una sesión completa de Reiki</strong> a otra persona.</li>
+                    <li>Documentar cómo preparaste el espacio y tu estado interno.</li>
+                    <li>Escribir sobre lo más destacado del feedback recibido.</li>
+                    <li>Reflexionar sobre qué sitios del cuerpo energéticamente respondieron más.</li>
+                </ul>
+            </div>
+            
+            <div class="decorative-element">
+                ⚹ ∗ ◦ ✧ ◦ ∗ ⚹
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: #8b7765; font-style: italic;">
+                Desde el canal del corazón al servicio<br>
+                ※ Con amor y presencia consciente ※
+            </div>
+        </div>
+    </div>
+</body>
+</html>

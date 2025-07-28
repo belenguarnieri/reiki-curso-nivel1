@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiki Usui Nivel 1 - Módulo 3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #5d4e75;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 20px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Página de portada */
+        .cover-page {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 50%, #e17055 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40mm;
+            position: relative;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .main-logo {
+            background: rgba(139, 119, 101, 0.9);
+            border-radius: 120px;
+            padding: 60px 50px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .main-logo h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .main-logo h2 {
+            color: white;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+        
+        .module-title {
+            background: rgba(255,255,255,0.9);
+            padding: 20px 40px;
+            border-radius: 25px;
+            margin-top: 40px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .module-title h3 {
+            color: #8b7765;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        /* Páginas de contenido */
+        .content-page {
+            padding: 25mm;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 30%, #e17055 100%);
+            position: relative;
+        }
+        
+        .content-page::before {
+            content: '';
+            position: absolute;
+            top: 15mm;
+            left: 15mm;
+            right: 15mm;
+            bottom: 15mm;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            z-index: 1;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #fd79a8;
+        }
+        
+        .page-header h1 {
+            color: #8b7765;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .page-header h2 {
+            color: #fd79a8;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #8b7765;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-subtitle {
+            color: #fd79a8;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        
+        .text-content {
+            color: #5d4e75;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(253, 121, 168, 0.1), rgba(225, 112, 85, 0.1));
+            border-left: 4px solid #fd79a8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .bullet-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .bullet-list li {
+            color: #5d4e75;
+            font-size: 14px;
+            margin-bottom: 8px;
+            list-style: none;
+            position: relative;
+        }
+        
+        .bullet-list li::before {
+            content: '♦';
+            position: absolute;
+            left: -20px;
+            color: #fd79a8;
+        }
+        
+        .exercise-box {
+            background: linear-gradient(135deg, rgba(255, 234, 167, 0.3), rgba(253, 121, 168, 0.2));
+            border: 2px dashed #fd79a8;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+        }
+        
+        .exercise-title {
+            color: #8b7765;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .video-link, .meditation-link {
+            background: linear-gradient(135deg, #fd79a8, #e17055);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-link:hover, .meditation-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(253, 121, 168, 0.4);
+        }
+        
+        .ritual-box {
+            background: linear-gradient(135deg, rgba(139, 119, 101, 0.1), rgba(253, 121, 168, 0.1));
+            border: 1px solid #8b7765;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #8b7765, #5d4e75);
+            color: white;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            text-align: center;
+            font-style: italic;
+            font-size: 16px;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .checklist {
+            background: rgba(255, 234, 167, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .checklist h4 {
+            color: #8b7765;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            color: #5d4e75;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #8b7765;
+            font-weight: bold;
+        }
+        
+        .step-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.8);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .step-table th {
+            background: linear-gradient(135deg, #8b7765, #5d4e75);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .step-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(253, 121, 168, 0.2);
+            font-size: 12px;
+            vertical-align: top;
+        }
+        
+        .step-table tr:nth-child(even) {
+            background: rgba(255, 234, 167, 0.1);
+        }
+        
+        .step-number {
+            background: #fd79a8;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .step-section {
+            background: rgba(253, 121, 168, 0.05);
+            border: 1px solid rgba(253, 121, 168, 0.3);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .step-section h4 {
+            color: #8b7765;
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .materials-list {
+            background: rgba(255, 234, 167, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        .materials-list h5 {
+            color: #8b7765;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .affirmation-box {
+            background: linear-gradient(135deg, rgba(139, 119, 101, 0.1), rgba(253, 121, 168, 0.1));
+            border: 2px solid #8b7765;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-style: italic;
+            text-align: center;
+            color: #8b7765;
+            font-weight: 500;
+        }
+        
+        .decorative-element {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #fd79a8;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .video-link, .meditation-link {
+                color: #fd79a8 !important;
+                background: transparent !important;
+                border: 2px solid #fd79a8 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Página de Portada -->
+    <div class="page cover-page">
+        <div class="main-logo">
+            <h1>REIKI USUI</h1>
+            <h2>Nivel 1</h2>
+        </div>
+        <div class="module-title">
+            <h3>MÓDULO 3: AUTOTRATAMIENTO REIKI</h3>
+        </div>
+    </div>
+
+    <!-- Página 1: Introducción -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>✦ Autotratamiento Reiki</h1>
+                <h2>Tu cuerpo como templo de sanación</h2>
+            </div>
+            
+            <div class="quote-box" style="margin-bottom: 30px;">
+                "La energía que compartes primero debe habitarte."
+            </div>
+            
+            <div class="highlight-box">
+                <div class="section-title">✦ MÓDULO 3: Autotratamiento Reiki</div>
+                
+                <div class="section-subtitle">• Objetivo del Módulo:</div>
+                <ul class="bullet-list">
+                    <li>Aprender y aplicar la técnica de autotratamiento Reiki completa.</li>
+                    <li>Comprender cómo preparar cuerpo, mente y entorno para canalizar energía.</li>
+                    <li>Desarrollar una práctica personal profunda, constante y guiada.</li>
+                    <li>Explorar la escucha energética interna: cómo percibir y confiar en tus sensaciones.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">♦ Contenido de estudio</div>
+                
+                <div class="section-subtitle">◊ ¿Qué es el autotratamiento Reiki?</div>
+                <div class="text-content">
+                    Es el acto de canalizar energía Reiki hacia uno mismo para armonizar todos los planos: físico, emocional, mental y espiritual. El autotratamiento te convierte en tu propio canal de transformación y evolución. Esta práctica no solo restaura el equilibrio sino que también despierta tu conciencia energética.
+                </div>
+                
+                <div class="section-subtitle">◊ ¿Por qué es esencial?</div>
+                <ul class="bullet-list">
+                    <li>Limpia bloqueos que impiden canalizar adecuadamente.</li>
+                    <li>Sostiene tu frecuencia vibratoria en momentos de estrés, tristeza o enfermedad.</li>
+                    <li>Activa tu intuición, calma el ego y abre el corazón.</li>
+                    <li>Es la base ética de todo practicante Reiki: primero te sanás vos, luego sanás al otro.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 2: Paso a Paso - Preparación -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>※ PASO A PASO COMPLETO</h1>
+                <h2>Autotratamiento Reiki</h2>
+            </div>
+            
+            <div class="step-section">
+                <h4><span class="step-number">A</span>✦ Preparación del espacio (5 min)</h4>
+                <ul class="bullet-list">
+                    <li>Elegí un lugar tranquilo, sin interrupciones.</li>
+                    <li>Encendé una vela blanca o incienso de lavanda, romero o sándalo.</li>
+                    <li>Reproducí música Reiki o sonidos 528 Hz (audio sugerido)</li>
+                </ul>
+                
+                <div class="materials-list">
+                    <h5>Tené a mano:</h5>
+                    <ul class="bullet-list" style="margin-left: 0;">
+                        <li style="margin-left: 20px;">Agua</li>
+                        <li style="margin-left: 20px;">Cuaderno Reiki</li>
+                        <li style="margin-left: 20px;">Un cristal (opcional: cuarzo rosa o amatista)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="step-section">
+                <h4><span class="step-number">B</span>⚹ Activación y conexión (3 min)</h4>
+                <ul class="bullet-list">
+                    <li>Sentate o recostate con la columna recta.</li>
+                    <li>Juntá tus manos en posición Gassho (palmas frente al pecho).</li>
+                    <li>Cerrá los ojos y repetí internamente:</li>
+                </ul>
+                
+                <div class="affirmation-box">
+                    "Soy canal de energía universal. Reiki fluye a través de mí, guiado por amor, sabiduría y compasión."
+                </div>
+                
+                <div class="text-content">
+                    Sentí el calor o cosquilleo en tus manos. Respiralo.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 3: Autotratamiento Completo -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>◐ Autotratamiento completo (30–40 min)</h1>
+                <h2>Tiempo recomendado por posición: 3–5 minutos</h2>
+            </div>
+            
+            <table class="step-table">
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Posición de las manos</th>
+                        <th>Chakra</th>
+                        <th>Intención</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Cabeza</strong></td>
+                        <td>Manos sobre la coronilla</td>
+                        <td>Corona</td>
+                        <td>Conectar con guía espiritual</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Frente</strong></td>
+                        <td>Manos sobre el entrecejo</td>
+                        <td>Tercer ojo</td>
+                        <td>Calmar la mente</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Nuca</strong></td>
+                        <td>Manos detrás de la cabeza</td>
+                        <td>-</td>
+                        <td>Liberar pensamientos repetitivos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Garganta</strong></td>
+                        <td>Manos sobre el cuello</td>
+                        <td>Garganta</td>
+                        <td>Expresar desde el alma</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Corazón</strong></td>
+                        <td>Manos en el centro del pecho</td>
+                        <td>Corazón</td>
+                        <td>Abrir al amor y al perdón</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Plexo solar</strong></td>
+                        <td>Manos en el estómago</td>
+                        <td>Plexo solar</td>
+                        <td>Recuperar el poder personal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7. Abdomen bajo</strong></td>
+                        <td>Manos debajo del ombligo</td>
+                        <td>Sacro</td>
+                        <td>Fluir con la vida y la emoción</td>
+                    </tr>
+                    <tr>
+                        <td><strong>8. Caderas</strong></td>
+                        <td>Manos sobre caderas o ingles</td>
+                        <td>Raíz</td>
+                        <td>Sentirte segur@ y sostenid@</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9. Rodillas</strong></td>
+                        <td>Manos sobre rodillas</td>
+                        <td>-</td>
+                        <td>Liberar cargas ancestrales</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10. Pies</strong></td>
+                        <td>Manos sobre los empeines</td>
+                        <td>-</td>
+                        <td>Enraizarte y confiar</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight-box">
+                <div class="text-content">
+                    <strong>◊ Versión corta:</strong> Si tenés poco tiempo, podés realizar una versión corta de 10 minutos, permaneciendo 1 minuto en cada uno de los 7 chakras principales.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 4: Cierre y Ejercicios -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="step-section">
+                <h4><span class="step-number">D</span>☾ Cierre y agradecimiento (5 min)</h4>
+                <ul class="bullet-list">
+                    <li>Llevá tus manos al corazón.</li>
+                    <li>Agradecé mentalmente:</li>
+                </ul>
+                
+                <div class="affirmation-box">
+                    "Gracias Reiki, gracias energía, gracias cuerpo por permitirme sanar."
+                </div>
+                
+                <ul class="bullet-list">
+                    <li>Tomá un vaso de agua lentamente, en silencio.</li>
+                    <li>Anotá en tu cuaderno cualquier sensación, imagen, emoción o intuición recibida.</li>
+                </ul>
+            </div>
+            
+            <div class="exercise-box">
+                <div class="exercise-title">※ Ejercicio de integración: Diario de Práctica Reiki</div>
+                <div class="text-content">
+                    Usá tu cuaderno Reiki para registrar:
+                </div>
+                <ul class="bullet-list">
+                    <li>Fecha y hora de práctica.</li>
+                    <li>Estado emocional antes.</li>
+                    <li>Sensaciones físicas durante.</li>
+                    <li>Palabras, colores o imágenes canalizadas.</li>
+                    <li>Reflexión personal post-práctica.</li>
+                    <li>Nivel de energía al finalizar.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">◈ Recursos adicionales</div>
+                
+                <div class="section-subtitle">▶ Videos confiables</div>
+                <div style="margin: 15px 0;">
+                    <a href="#" class="video-link">→ Autotratamiento Reiki paso a paso</a>
+                    <a href="#" class="video-link">→ Música 528 Hz</a>
+                    <a href="#" class="video-link">→ Activación energética</a>
+                </div>
+                
+                <div class="section-subtitle">◐ Meditación sugerida:</div>
+                <div class="highlight-box">
+                    <div class="text-content">
+                        <strong>"Conexión con tu canal Reiki"</strong><br>
+                        Duración: 12 minutos<br>
+                        Pasos: respiración, escaneo corporal, apertura energética, cierre con visualización dorada.
+                    </div>
+                    <div style="text-align: center; margin-top: 15px;">
+                        <a href="#" class="meditation-link">→ Escuchar meditación</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 5: Cierre del Módulo -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="quote-box">
+                ♦ Frase vibracional del módulo:<br><br>
+                "Antes de sanar al mundo, recordá cómo sanar tu propia luz. Solo cuando vos brillás, podés iluminar."
+            </div>
+            
+            <div class="checklist">
+                <h4>✓ Actividades del Módulo 3</h4>
+                <ul>
+                    <li>Realizá al menos 7 autotratamientos completos en los próximos días.</li>
+                    <li>Anotá cada sesión en tu diario.</li>
+                    <li>Grabate (opcional) recitando tu intención Reiki.</li>
+                    <li>Compartí (si lo sentís) con tu maestra/o lo que más te sorprendió de la práctica.</li>
+                    <li>Explorá qué chakra necesitó más energía y escribí una carta a ese centro.</li>
+                </ul>
+            </div>
+            
+            <div class="decorative-element">
+                ✦ ∗ ◦ ✧ ◦ ∗ ✦
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: #8b7765; font-style: italic;">
+                Con amor hacia tu templo interior<br>
+                ※ Práctica constante, transformación permanente ※
+            </div>
+        </div>
+    </div>
+</body>
+</html>

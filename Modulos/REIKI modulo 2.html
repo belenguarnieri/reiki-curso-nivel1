@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiki Usui Nivel 1 - Módulo 2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #5d4e75;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 20px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Página de portada */
+        .cover-page {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 50%, #e17055 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40mm;
+            position: relative;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .main-logo {
+            background: rgba(139, 119, 101, 0.9);
+            border-radius: 120px;
+            padding: 60px 50px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .main-logo h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .main-logo h2 {
+            color: white;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+        
+        .module-title {
+            background: rgba(255,255,255,0.9);
+            padding: 20px 40px;
+            border-radius: 25px;
+            margin-top: 40px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .module-title h3 {
+            color: #8b7765;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        /* Páginas de contenido */
+        .content-page {
+            padding: 25mm;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 30%, #e17055 100%);
+            position: relative;
+        }
+        
+        .content-page::before {
+            content: '';
+            position: absolute;
+            top: 15mm;
+            left: 15mm;
+            right: 15mm;
+            bottom: 15mm;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            z-index: 1;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #fd79a8;
+        }
+        
+        .page-header h1 {
+            color: #8b7765;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .page-header h2 {
+            color: #fd79a8;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #8b7765;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-subtitle {
+            color: #fd79a8;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        
+        .text-content {
+            color: #5d4e75;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(253, 121, 168, 0.1), rgba(225, 112, 85, 0.1));
+            border-left: 4px solid #fd79a8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .bullet-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .bullet-list li {
+            color: #5d4e75;
+            font-size: 14px;
+            margin-bottom: 8px;
+            list-style: none;
+            position: relative;
+        }
+        
+        .bullet-list li::before {
+            content: '🔹';
+            position: absolute;
+            left: -20px;
+        }
+        
+        .exercise-box {
+            background: linear-gradient(135deg, rgba(255, 234, 167, 0.3), rgba(253, 121, 168, 0.2));
+            border: 2px dashed #fd79a8;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+        }
+        
+        .exercise-title {
+            color: #8b7765;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .video-link, .meditation-link {
+            background: linear-gradient(135deg, #fd79a8, #e17055);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-link:hover, .meditation-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(253, 121, 168, 0.4);
+        }
+        
+        .ritual-box {
+            background: linear-gradient(135deg, rgba(139, 119, 101, 0.1), rgba(253, 121, 168, 0.1));
+            border: 1px solid #8b7765;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #8b7765, #5d4e75);
+            color: white;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            text-align: center;
+            font-style: italic;
+            font-size: 16px;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .checklist {
+            background: rgba(255, 234, 167, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .checklist h4 {
+            color: #8b7765;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            color: #5d4e75;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+        }
+        
+        .lineage-tree {
+            background: rgba(255, 234, 167, 0.2);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .lineage-tree .master {
+            color: #8b7765;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 8px;
+        }
+        
+        .lineage-tree .arrow {
+            color: #fd79a8;
+            font-size: 24px;
+            margin: 5px 0;
+        }
+        
+        .reflection-box {
+            background: linear-gradient(135deg, rgba(139, 119, 101, 0.05), rgba(253, 121, 168, 0.05));
+            border: 2px solid #8b7765;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            font-style: italic;
+        }
+        
+        .decorative-element {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #fd79a8;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .video-link, .meditation-link {
+                color: #fd79a8 !important;
+                background: transparent !important;
+                border: 2px solid #fd79a8 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Página de Portada -->
+    <div class="page cover-page">
+        <div class="main-logo">
+            <h1>REIKI USUI</h1>
+            <h2>Nivel 1</h2>
+        </div>
+        <div class="module-title">
+            <h3>MÓDULO 2: HISTORIA DEL REIKI Y MIKAO USUI</h3>
+        </div>
+    </div>
+
+    <!-- Página 1: Introducción al Módulo -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>🌄 Historia del Reiki y Mikao Usui</h1>
+                <h2>Módulo 2 - Conectando con las Raíces</h2>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="section-title">🌄 MÓDULO 2: Historia del Reiki y Mikao Usui</div>
+                
+                <div class="section-subtitle">🎯 Objetivo del módulo:</div>
+                <ul class="bullet-list">
+                    <li>Comprender cómo nació el Reiki y quién fue su creador.</li>
+                    <li>Conectarte con la sabiduría ancestral del linaje Usui.</li>
+                    <li>Valorar la transmisión del conocimiento como acto sagrado.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">📖 Contenido de estudio</div>
+                
+                <div class="section-subtitle">📜 ¿Quién fue Mikao Usui?</div>
+                <div class="text-content">
+                    Mikao Usui (1865–1926) fue un monje japonés, estudioso de filosofía, espiritualidad y sanación. No era médico, pero tenía un gran interés por comprender la causa del sufrimiento humano y cómo aliviarlo.
+                </div>
+                
+                <div class="text-content">
+                    Según los registros más difundidos, Usui pasó años estudiando textos budistas y sintoístas, buscando una vía para la sanación espiritual profunda. En 1922, se retiró a meditar y ayunar durante <strong>21 días en el monte Kurama</strong>, una montaña sagrada cerca de Kioto. Allí, tuvo una <strong>experiencia espiritual iluminadora</strong>: vio símbolos de luz y sintió que la energía universal fluía a través de él. Así nació el método Reiki.
+                </div>
+                
+                <ul class="bullet-list">
+                    <li>Fundó el <strong>Usui Reiki Ryoho Gakkai</strong>, para enseñar este sistema de sanación espiritual.</li>
+                    <li>Formó discípulos y difundió la práctica en Japón.</li>
+                    <li>Antes de su muerte, transmitió sus conocimientos a <strong>Chujiro Hayashi</strong>, quien luego los compartió con <strong>Hawayo Takata</strong> en Hawái. Ella llevó Reiki a Occidente.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 2: El Linaje Reiki -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>🧬 El Linaje Reiki Usui</h1>
+            </div>
+            
+            <div class="text-content">
+                Para muchos practicantes, el linaje espiritual es importante. Aquí tienes el básico:
+            </div>
+            
+            <div class="lineage-tree">
+                <div class="master">Mikao Usui</div>
+                <div class="arrow">↓</div>
+                <div class="master">Chujiro Hayashi</div>
+                <div class="arrow">↓</div>
+                <div class="master">Hawayo Takata</div>
+                <div class="arrow">↓</div>
+                <div class="master">Maestros occidentales<br>(como William Lee Rand, Frank Arjava Petter, etc.)</div>
+            </div>
+            
+            <div class="text-content" style="text-align: center; font-weight: 500; color: #8b7765;">
+                Tú también formarás parte de este linaje a través de tu Maestr@. Reiki vive gracias a cada persona que lo recibe y lo comparte con amor.
+            </div>
+            
+            <div class="reflection-box">
+                <div class="section-title">🌺 Reflexión guiada</div>
+                <div class="text-content" style="font-style: italic; text-align: center; font-size: 16px; color: #8b7765;">
+                    "Mikao Usui ascendió al monte Kurama en busca de sabiduría. ¿Cuál es tu montaña interior? ¿Qué deseas recordar o recibir con Reiki?"
+                </div>
+            </div>
+            
+            <div class="exercise-box">
+                <div class="exercise-title">📝 En tu cuaderno Reiki dedica un espacio para reflexionar:</div>
+                <ul class="bullet-list">
+                    <li>¿Qué parte de la historia de Usui resuena conmigo?</li>
+                    <li>¿Qué espero encontrar o sanar con Reiki?</li>
+                    <li>¿Qué necesito soltar para abrirme al proceso?</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 3: Videos y Meditación -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>🎥 Recursos Multimedia</h1>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🎥 Videos recomendados</div>
+                
+                <div class="text-content">
+                    Un documental breve (8 meses atrás) que narra la vida, misión y legado espiritual de Usui, ideal para contextualizar su búsqueda y su obra.
+                </div>
+                
+                <div class="text-content">
+                    Este episodio reciente cuenta cómo una mujer hawaiana recibió la iniciación, fue entrenada en el linaje japonés y expandió Reiki a Occidente — fundamental para comprender cómo el sistema llegó al mundo moderno.
+                </div>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <a href="https://www.youtube.com/watch?v=GM1MlFbcIjE" target="_blank" class="video-link">🔗 Ver videos documentales</a>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🧘‍♀️ Meditación recomendada: Conexión con el Linaje Usui</div>
+                
+                <div class="highlight-box">
+                    <div class="text-content">
+                        Puedes buscar en YouTube meditación guiada sobre "conexión con maestros Reiki" o crear la tuya propia basada en:
+                    </div>
+                    
+                    <div style="text-align: center; margin: 15px 0;">
+                        <a href="https://www.youtube.com/watch?v=oszhW4gaI7k&t=8s" target="_blank" class="meditation-link">🔗 Meditación de Conexión con el Linaje</a>
+                    </div>
+                    
+                    <div class="bullet-list" style="margin-left: 0;">
+                        <li style="margin-left: 20px;">Sentarte en posición cómoda y Gassho (manos juntas frente al pecho).</li>
+                        <li style="margin-left: 20px;">Respirar profundamente mientras visualizas un sendero montañoso.</li>
+                        <li style="margin-left: 20px;">Imaginarte recibiendo una luz dorada desde la cima, conectando con Usui y los maestros que vinieron después.</li>
+                        <li style="margin-left: 20px;">Permanecer varios minutos en silencio y agradecer.</li>
+                    </div>
+                    
+                    <div class="text-content" style="margin-top: 15px;">
+                        Al terminar, escribe en tu cuaderno qué imágenes, sensaciones o palabras surgieron durante la meditación.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 4: Ritual y Cierre -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>🕯 Ritual y Cierre del Módulo</h1>
+            </div>
+            
+            <div class="ritual-box">
+                <div class="section-title">🕯 Ritual simbólico opcional: Honrar tu linaje</div>
+                
+                <ul class="bullet-list" style="text-align: left; margin: 20px 0;">
+                    <li>Prepara un pequeño altar: vela blanca, una imagen de una montaña o símbolo Reiki.</li>
+                    <li>Escribe esta frase en un papel: "Gracias Maestro Usui, por abrir este canal de luz que hoy reside en mí."</li>
+                </ul>
+                
+                <div class="text-content">
+                    Permanece en silencio unos minutos sintiendo tu conexión energética con el linaje.
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                🧡 Frase inspiradora del módulo:<br><br>
+                "El Reiki que hoy vive en ti nació del silencio de un Maestro en la montaña. Ahora amas lo que él descubrió."
+            </div>
+            
+            <div class="checklist">
+                <h4>✅ Actividades para este módulo:</h4>
+                <ul>
+                    <li><strong>Ver los dos videos recomendados</strong>, tomando notas si algo te sensibiliza o inspira.</li>
+                    <li><strong>Meditar y registrar</strong> tus impresiones después de la visualización o meditación guiada.</li>
+                    <li><strong>Escribir en tu cuaderno</strong> la reflexión guiada propuesta sobre tu montaña interior.</li>
+                    <li><strong>Si lo deseas</strong>, realizar el ritual simbólico de conexión con el linaje.</li>
+                </ul>
+            </div>
+            
+            <div class="decorative-element">
+                ⛰️ ∗ ◦ ✧ ◦ ∗ ⛰️
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: #8b7765; font-style: italic;">
+                En conexión con el linaje sagrado<br>
+                🙏 Gracias Maestro Usui 🙏
+            </div>
+        </div>
+    </div>
+</body>
+</html>

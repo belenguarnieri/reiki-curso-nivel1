@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiki Usui Nivel 1 - Curso Completo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #5d4e75;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 30%, #e17055 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .main-logo {
+            background: linear-gradient(135deg, #8b7765, #5d4e75);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .subtitle {
+            color: #fd79a8;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+        .description {
+            color: #5d4e75;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .module-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #fd79a8, #e17055);
+        }
+        
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(253, 121, 168, 0.2);
+        }
+        
+        .module-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #fd79a8, #e17055);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .module-title {
+            color: #8b7765;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .module-subtitle {
+            color: #fd79a8;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .module-description {
+            color: #5d4e75;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .module-topics {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .module-topics li {
+            color: #5d4e75;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .module-topics li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #fd79a8;
+        }
+        
+        .module-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #fd79a8, #e17055);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        
+        .module-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(253, 121, 168, 0.4);
+        }
+        
+        .coming-soon {
+            opacity: 0.6;
+            position: relative;
+        }
+        
+        .coming-soon::after {
+            content: 'Próximamente';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(139, 119, 101, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+        
+        .coming-soon .module-button {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer-quote {
+            color: #8b7765;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-text {
+            color: #5d4e75;
+            font-size: 0.95rem;
+        }
+        
+        .navigation-info {
+            background: rgba(139, 119, 101, 0.1);
+            border: 2px solid #8b7765;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .navigation-info h3 {
+            color: #8b7765;
+            margin-bottom: 10px;
+        }
+        
+        .navigation-info p {
+            color: #5d4e75;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .main-logo {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .modules-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .module-card {
+                padding: 20px;
+            }
+        }
+        
+        .decorative-element {
+            text-align: center;
+            font-size: 2rem;
+            margin: 30px 0;
+            color: #fd79a8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="main-logo">REIKI USUI</h1>
+            <h2 class="subtitle">Nivel 1 - Curso Completo</h2>
+            <p class="description">
+                Bienvenido al curso completo de Reiki Usui Nivel 1. Un viaje de autoconocimiento, 
+                sanación y conexión con la energía universal que transformará tu vida desde adentro hacia afuera.
+            </p>
+        </header>
+        
+        <div class="navigation-info">
+            <h3>🧭 Navegación del Curso</h3>
+            <p>Cada módulo está diseñado para completarse en secuencia. Tómate tu tiempo, practica y registra tus experiencias en tu cuaderno Reiki.</p>
+        </div>
+        
+        <main class="modules-grid">
+            <article class="module-card">
+                <div class="module-number">Módulo 1</div>
+                <h3 class="module-title">✨ Bienvenida e Introducción al Reiki</h3>
+                <h4 class="module-subtitle">Los Fundamentos Esenciales</h4>
+                <p class="module-description">
+                    Tu bienvenida oficial al mundo del Reiki. Descubre qué es esta energía universal, 
+                    prepara tu intención y conecta con tu propósito de sanación.
+                </p>
+                <ul class="module-topics">
+                    <li>¿Qué es Reiki y para qué sirve?</li>
+                    <li>Tu carta de intención personal</li>
+                    <li>Meditación de apertura energética</li>
+                    <li>Ritual de inicio del camino</li>
+                </ul>
+                <a href="modulos/modulo1.html" class="module-button">Acceder al Módulo</a>
+            </article>
+            
+            <article class="module-card">
+                <div class="module-number">Módulo 2</div>
+                <h3 class="module-title">⛰ Historia del Reiki y Mikao Usui</h3>
+                <h4 class="module-subtitle">Conectando con las Raíces</h4>
+                <p class="module-description">
+                    Conoce la fascinante historia de Mikao Usui y cómo nació el Reiki en el monte Kurama. 
+                    Conecta con el linaje sagrado que ahora vive en ti.
+                </p>
+                <ul class="module-topics">
+                    <li>La vida y búsqueda de Mikao Usui</li>
+                    <li>El linaje Reiki hasta nuestros días</li>
+                    <li>Meditación de conexión con el linaje</li>
+                    <li>Ritual de honrar tu herencia espiritual</li>
+                </ul>
+                <a href="modulos/modulo2.html" class="module-button">Acceder al Módulo</a>
+            </article>
+            
+            <article class="module-card">
+                <div class="module-number">Módulo 3</div>
+                <h3 class="module-title">✦ Autotratamiento Reiki</h3>
+                <h4 class="module-subtitle">Tu Cuerpo como Templo de Sanación</h4>
+                <p class="module-description">
+                    Aprende la técnica completa de autotratamiento Reiki. La base fundamental 
+                    de todo practicante: primero te sanás a ti mismo.
+                </p>
+                <ul class="module-topics">
+                    <li>Técnica paso a paso completa</li>
+                    <li>Posiciones de manos y chakras</li>
+                    <li>Diario de práctica personal</li>
+                    <li>Ejercicios de integración</li>
+                </ul>
+                <a href="modulos/modulo3.html" class="module-button">Acceder al Módulo</a>
+            </article>
+            
+            <article class="module-card coming-soon">
+                <div class="module-number">Módulo 4</div>
+                <h3 class="module-title">🤲 Los Cinco Principios del Reiki</h3>
+                <h4 class="module-subtitle">Vivir desde la Sabiduría</h4>
+                <p class="module-description">
+                    Profundiza en los cinco principios de Mikao Usui y aprende a integrarlos 
+                    como filosofía de vida diaria.
+                </p>
+                <ul class="module-topics">
+                    <li>Los cinco principios explicados</li>
+                    <li>Integración en la vida cotidiana</li>
+                    <li>Meditaciones guiadas</li>
+                    <li>Ejercicios de aplicación práctica</li>
+                </ul>
+                <button class="module-button">Acceder al Módulo</button>
+            </article>
+            
+            <article class="module-card coming-soon">
+                <div class="module-number">Módulo 5</div>
+                <h3 class="module-title">💫 Tratamiento a Otros</h3>
+                <h4 class="module-subtitle">Compartiendo la Energía Universal</h4>
+                <p class="module-description">
+                    Aprende a canalizar Reiki hacia otras personas. Técnicas, ética y preparación 
+                    para sesiones de sanación.
+                </p>
+                <ul class="module-topics">
+                    <li>Protocolo completo de tratamiento</li>
+                    <li>Ética del sanador Reiki</li>
+                    <li>Preparación del espacio sagrado</li>
+                    <li>Manejo de la energía en otros</li>
+                </ul>
+                <button class="module-button">Acceder al Módulo</button>
+            </article>
+            
+            <article class="module-card coming-soon">
+                <div class="module-number">Módulo 6</div>
+                <h3 class="module-title">🐾 Reiki para Animales y Plantas</h3>
+                <h4 class="module-subtitle">Sanación para Todos los Seres</h4>
+                <p class="module-description">
+                    Extiende tu práctica Reiki hacia el reino animal y vegetal. Aprende técnicas 
+                    especiales para sanar a todos los seres vivos.
+                </p>
+                <ul class="module-topics">
+                    <li>Reiki para mascotas y animales</li>
+                    <li>Energización de plantas y jardines</li>
+                    <li>Técnicas de sanación a distancia</li>
+                    <li>Casos prácticos y experiencias</li>
+                </ul>
+                <button class="module-button">Acceder al Módulo</button>
+            </article>
+        </main>
+        
+        <div class="decorative-element">
+            ✦ ∗ ◦ ✧ ◦ ∗ ✦
+        </div>
+        
+        <footer class="footer">
+            <p class="footer-quote">
+                "El Reiki no es solo una técnica de sanación, es un camino de vida que te conecta 
+                con tu esencia más pura y amorosa."
+            </p>
+            <p class="footer-text">
+                🙏 Con amor y luz para tu camino de sanación 🙏
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiki Usui Nivel 1 - Módulo 1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #5d4e75;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 20px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Página de portada */
+        .cover-page {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 50%, #e17055 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40mm;
+            position: relative;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .main-logo {
+            background: rgba(139, 119, 101, 0.9);
+            border-radius: 120px;
+            padding: 60px 50px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .main-logo h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .main-logo h2 {
+            color: white;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+        
+        .sunburst {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        .sunburst::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 80px;
+            background: white;
+            transform-origin: 50% 40px;
+            opacity: 0.6;
+        }
+        
+        .module-title {
+            background: rgba(255,255,255,0.9);
+            padding: 20px 40px;
+            border-radius: 25px;
+            margin-top: 40px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .module-title h3 {
+            color: #8b7765;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        /* Páginas de contenido */
+        .content-page {
+            padding: 25mm;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 30%, #e17055 100%);
+            position: relative;
+        }
+        
+        .content-page::before {
+            content: '';
+            position: absolute;
+            top: 15mm;
+            left: 15mm;
+            right: 15mm;
+            bottom: 15mm;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            z-index: 1;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #fd79a8;
+        }
+        
+        .page-header h1 {
+            color: #8b7765;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .page-header h2 {
+            color: #fd79a8;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #8b7765;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-subtitle {
+            color: #fd79a8;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        
+        .text-content {
+            color: #5d4e75;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(253, 121, 168, 0.1), rgba(225, 112, 85, 0.1));
+            border-left: 4px solid #fd79a8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .bullet-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .bullet-list li {
+            color: #5d4e75;
+            font-size: 14px;
+            margin-bottom: 8px;
+            list-style: none;
+            position: relative;
+        }
+        
+        .bullet-list li::before {
+            content: '🔹';
+            position: absolute;
+            left: -20px;
+        }
+        
+        .exercise-box {
+            background: linear-gradient(135deg, rgba(255, 234, 167, 0.3), rgba(253, 121, 168, 0.2));
+            border: 2px dashed #fd79a8;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+        }
+        
+        .exercise-title {
+            color: #8b7765;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .video-link, .meditation-link {
+            background: linear-gradient(135deg, #fd79a8, #e17055);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-link:hover, .meditation-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(253, 121, 168, 0.4);
+        }
+        
+        .ritual-box {
+            background: linear-gradient(135deg, rgba(139, 119, 101, 0.1), rgba(253, 121, 168, 0.1));
+            border: 1px solid #8b7765;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #8b7765, #5d4e75);
+            color: white;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            text-align: center;
+            font-style: italic;
+            font-size: 16px;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .checklist {
+            background: rgba(255, 234, 167, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .checklist h4 {
+            color: #8b7765;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            color: #5d4e75;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+        }
+        
+        .decorative-element {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #fd79a8;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .video-link, .meditation-link {
+                color: #fd79a8 !important;
+                background: transparent !important;
+                border: 2px solid #fd79a8 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Página de Portada -->
+    <div class="page cover-page">
+        <div class="sunburst"></div>
+        <div class="main-logo">
+            <h1>REIKI USUI</h1>
+            <h2>Nivel 1</h2>
+        </div>
+        <div class="module-title">
+            <h3>MÓDULO 1: BIENVENIDA E INTRODUCCIÓN</h3>
+        </div>
+    </div>
+
+    <!-- Página 1: Bienvenida -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>✨ Bienvenida Oficial ✨</h1>
+                <h2>Módulo 1 del Curso de Reiki Usui Nivel 1</h2>
+            </div>
+            
+            <div class="text-content">
+                Soy tu guía en este camino, una Maestra de Reiki con años de experiencia en la enseñanza, la práctica personal y la transmisión amorosa de esta energía. Aquí comienza tu viaje con el Reiki: un reencuentro con tu poder interior, con la fuente universal y con tu capacidad innata de sanar, acompañar y transformar.
+            </div>
+            
+            <div class="highlight-box">
+                <div class="section-title">🌟 MÓDULO 1: Bienvenida e Introducción al Reiki</div>
+                
+                <div class="section-subtitle">🎯 Objetivo del módulo:</div>
+                <ul class="bullet-list">
+                    <li>Iniciar tu conexión consciente con la energía Reiki.</li>
+                    <li>Comprender qué es Reiki, su propósito, y qué vas a lograr en este nivel.</li>
+                    <li>Activar tu intención y predisposición energética para recibir esta sabiduría.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">📖 Contenido de estudio</div>
+                
+                <div class="section-subtitle">🌌 ¿Qué es Reiki?</div>
+                <div class="text-content">
+                    Reiki es una técnica de sanación y armonización natural que canaliza la <strong>energía vital universal</strong> a través de las manos. La palabra <em>Rei</em> significa "energía universal" y <em>Ki</em>, "energía vital". Reiki no es una religión, ni requiere dogmas ni creencias específicas. Es una práctica espiritual abierta y amorosa.
+                </div>
+                
+                <div class="text-content">
+                    👉 <strong>Canalizar Reiki</strong> es permitir que la energía universal fluya a través de ti hacia ti mismo o hacia otros con la intención de equilibrar cuerpo, mente, emociones y espíritu.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 2: Qué puedes hacer con Reiki -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>🧘‍♀️ ¿Qué puedes hacer con Reiki Nivel 1?</h1>
+            </div>
+            
+            <ul class="bullet-list" style="font-size: 15px; margin-top: 30px;">
+                <li>Realizar <strong>autotratamientos</strong> energéticos para armonizarte física y emocionalmente.</li>
+                <li>Aplicar Reiki de forma presencial a otras personas (sin símbolos aún).</li>
+                <li>Ofrecer Reiki a animales, plantas, alimentos y espacios.</li>
+                <li>Incorporar los <strong>5 principios del Reiki</strong> como guía de vida.</li>
+                <li>Activar tu intuición energética y desarrollar sensibilidad vibracional.</li>
+            </ul>
+            
+            <div class="section" style="margin-top: 40px;">
+                <div class="section-title">📜 El Camino del Reiki – Reflexión</div>
+                <div class="text-content">
+                    Recibir Reiki es abrir un portal hacia el equilibrio y la sabiduría interna. No solo se trata de "sanar", sino de recordar que ya somos completos y luminosos.
+                </div>
+                
+                <div class="text-content">
+                    <strong>Desde el primer día, Reiki comenzará a actuar en ti</strong>, removiendo bloqueos, armonizando y mostrando lo que necesita atención con amor. Este camino requiere práctica, entrega y paciencia. No hay apuro. Todo llega cuando estás listo.
+                </div>
+            </div>
+            
+            <div class="exercise-box">
+                <div class="exercise-title">📝 Ejercicio de conexión inicial: Carta de Intención</div>
+                <div class="text-content">
+                    Tómate 10-15 minutos en un espacio tranquilo. En tu cuaderno Reiki, escribe:
+                </div>
+                <ul class="bullet-list">
+                    <li>¿Qué me trajo al Reiki?</li>
+                    <li>¿Qué deseo sanar o armonizar en mí?</li>
+                    <li>¿Cómo me gustaría usar Reiki en mi vida?</li>
+                </ul>
+                <div class="text-content" style="margin-top: 15px;">
+                    👉 <em>Este ejercicio abrirá tu canal de conexión consciente con la energía.</em>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 3: Videos y Meditación -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>🎥 Recursos Multimedia</h1>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🎥 Videos recomendados</div>
+                
+                <div style="margin-bottom: 30px;">
+                    <strong>1. Qué es REIKI - Para qué sirve EL REIKI</strong><br>
+                    YouTube – Canal: <em>Psicología Online</em><br>
+                    <a href="https://www.youtube.com/watch?v=vXE6D-bthVE" target="_blank" class="video-link">🔗 Ver video</a>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">🧘‍♀️ Meditación recomendada – Apertura al Reiki</div>
+                
+                <div class="highlight-box">
+                    <div style="margin-bottom: 15px;">
+                        <strong>💠 Meditación Guiada Activa tus Chakras con el símbolo Reiki USUI nivel 1</strong><br>
+                        Duración: 18 minutos<br>
+                        Canal: <em>Escuela Holiana</em><br>
+                        <a href="https://www.youtube.com/watch?v=il5yS8J54M8" target="_blank" class="meditation-link">🔗 Escuchar meditación</a>
+                    </div>
+                    
+                    <div class="section-subtitle">🪷 Indicaciones:</div>
+                    <ul class="bullet-list">
+                        <li>Busca un espacio tranquilo.</li>
+                        <li>Siéntate con la espalda recta, palmas hacia arriba.</li>
+                        <li>Escucha con ojos cerrados y respiración suave.</li>
+                        <li>Al finalizar, escribe en tu cuaderno lo que sentiste.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 4: Ritual y Cierre -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>🪄 Ritual de Inicio y Cierre</h1>
+            </div>
+            
+            <div class="ritual-box">
+                <div class="section-title">🪄 Ritual de inicio simbólico (opcional pero recomendado)</div>
+                
+                <div class="text-content" style="margin-bottom: 20px;">
+                    🌟 Enciende una vela blanca y coloca tus manos sobre tu corazón.<br>
+                    🌟 Repite esta afirmación 3 veces:
+                </div>
+                
+                <div style="font-style: italic; font-size: 16px; color: #8b7765; margin: 20px 0;">
+                    "Estoy lista/o para recibir la energía Reiki. Abro mi mente y corazón a la luz que sana, guía y transforma."
+                </div>
+                
+                <div class="text-content">
+                    Este pequeño ritual marcará tu compromiso energético con este camino.
+                </div>
+            </div>
+            
+            <div class="quote-box">
+                🧡 Frase inspiradora del módulo:<br><br>
+                "Cuando Reiki entra en tu vida, no estás aprendiendo algo nuevo… estás recordando algo que siempre estuvo en ti."
+            </div>
+            
+            <div class="checklist">
+                <h4>✅ Tareas para cerrar el módulo:</h4>
+                <ul>
+                    <li>Ver los videos recomendados.</li>
+                    <li>Escribir tu carta de intención.</li>
+                    <li>Realizar la meditación de apertura.</li>
+                    <li>Registrar tus sensaciones en el cuaderno Reiki.</li>
+                </ul>
+            </div>
+            
+            <div class="decorative-element">
+                ✨ ∗ ◦ ✧ ◦ ∗ ✨
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: #8b7765; font-style: italic;">
+                Con amor y luz en tu camino de sanación<br>
+                🙏 Namaste 🙏
+            </div>
+        </div>
+    </div>
+</body>
+</html>
