@@ -227,7 +227,132 @@
             font-size: 0.95rem;
         }
         
-        @media (max-width: 768px) {
+        .additional-materials {
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .materials-header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .materials-header h2 {
+            color: #8b7765;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .materials-header p {
+            color: #5d4e75;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .material-card {
+            background: linear-gradient(135deg, rgba(255, 234, 167, 0.3), rgba(253, 121, 168, 0.2));
+            border: 3px solid #fd79a8;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .material-card::before {
+            content: '📔';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 4rem;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+        
+        .material-card h3 {
+            color: #8b7765;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .material-card .material-subtitle {
+            color: #fd79a8;
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .material-description {
+            color: #5d4e75;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .material-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .material-features li {
+            color: #5d4e75;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .material-features li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+        
+        .download-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(40, 167, 69, 0.4);
+            background: linear-gradient(135deg, #20c997, #28a745);
+        }
+        
+        .download-button::before {
+            content: '📥 ';
+            margin-right: 8px;
+        }
             .main-logo {
                 font-size: 2rem;
                 letter-spacing: 4px;
@@ -372,6 +497,34 @@
                 <a href="Modulos/modulo6.html" class="module-button">Acceder al Módulo</a>
             </article>
         </main>
+        
+        <section class="additional-materials">
+            <div class="materials-header">
+                <h2>📔 Material Adicional</h2>
+                <p>Recursos complementarios para enriquecer tu práctica de Reiki</p>
+            </div>
+            
+            <div class="material-card">
+                <h3>📝 Cuaderno Personal de Reiki</h3>
+                <p class="material-subtitle">Tu compañero de práctica y evolución espiritual</p>
+                <p class="material-description">
+                    Un cuaderno especialmente diseñado para acompañar tu camino en Reiki. 
+                    Incluye espacios para registrar tus experiencias, seguir tu progreso y 
+                    profundizar en tu práctica personal.
+                </p>
+                <ul class="material-features">
+                    <li>Páginas para registrar autotratamientos</li>
+                    <li>Seguimiento de meditación Gassho</li>
+                    <li>Reflexiones sobre los 5 principios</li>
+                    <li>Registro de tratamientos a otros</li>
+                    <li>Espacios para gratitud y evolución personal</li>
+                    <li>Diseño imprimible y personalizable</li>
+                </ul>
+                <a href="Material_Adicional/cuaderno_reiki.html" class="download-button" target="_blank">
+                    Descargar Cuaderno
+                </a>
+            </div>
+        </section>
         
         <div class="decorative-element">
             ✦ ∗ ◦ ✧ ◦ ∗ ✦
