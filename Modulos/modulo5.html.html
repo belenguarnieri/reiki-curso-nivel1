@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reiki Usui Nivel 1 - Módulo 5</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #5d4e75;
+        }
+        
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 20px;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Página de portada */
+        .cover-page {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 50%, #e17055 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40mm;
+            position: relative;
+        }
+        
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+        
+        .main-logo {
+            background: rgba(139, 119, 101, 0.9);
+            border-radius: 120px;
+            padding: 60px 50px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .main-logo h1 {
+            color: white;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .main-logo h2 {
+            color: white;
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+        
+        .module-title {
+            background: rgba(255,255,255,0.9);
+            padding: 20px 40px;
+            border-radius: 25px;
+            margin-top: 40px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .module-title h3 {
+            color: #8b7765;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        
+        /* Páginas de contenido */
+        .content-page {
+            padding: 25mm;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fd79a8 30%, #e17055 100%);
+            position: relative;
+        }
+        
+        .content-page::before {
+            content: '';
+            position: absolute;
+            top: 15mm;
+            left: 15mm;
+            right: 15mm;
+            bottom: 15mm;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            z-index: 1;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #fd79a8;
+        }
+        
+        .page-header h1 {
+            color: #8b7765;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .page-header h2 {
+            color: #fd79a8;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: #8b7765;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-subtitle {
+            color: #fd79a8;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+        
+        .text-content {
+            color: #5d4e75;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(253, 121, 168, 0.1), rgba(225, 112, 85, 0.1));
+            border-left: 4px solid #fd79a8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .bullet-list {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .bullet-list li {
+            color: #5d4e75;
+            font-size: 14px;
+            margin-bottom: 8px;
+            list-style: none;
+            position: relative;
+        }
+        
+        .bullet-list li::before {
+            content: '♦';
+            position: absolute;
+            left: -20px;
+            color: #fd79a8;
+        }
+        
+        .exercise-box {
+            background: linear-gradient(135deg, rgba(255, 234, 167, 0.3), rgba(253, 121, 168, 0.2));
+            border: 2px dashed #fd79a8;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+        }
+        
+        .exercise-title {
+            color: #8b7765;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .video-link, .meditation-link {
+            background: linear-gradient(135deg, #fd79a8, #e17055);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-link:hover, .meditation-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(253, 121, 168, 0.4);
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #8b7765, #5d4e75);
+            color: white;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 15px;
+            text-align: center;
+            font-style: italic;
+            font-size: 16px;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+        
+        .checklist {
+            background: rgba(255, 234, 167, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .checklist h4 {
+            color: #8b7765;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            color: #5d4e75;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #8b7765;
+            font-weight: bold;
+        }
+        
+        .numbered-list {
+            counter-reset: section;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .numbered-list li {
+            counter-increment: section;
+            margin-bottom: 15px;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .numbered-list li::before {
+            content: counter(section);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #fd79a8;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .step-section {
+            background: rgba(253, 121, 168, 0.05);
+            border: 1px solid rgba(253, 121, 168, 0.3);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .step-section h4 {
+            color: #8b7765;
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .gassho-posture {
+            background: linear-gradient(135deg, rgba(139, 119, 101, 0.1), rgba(253, 121, 168, 0.1));
+            border: 2px solid #8b7765;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .gassho-posture .posture-icon {
+            font-size: 48px;
+            color: #8b7765;
+            margin-bottom: 15px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .benefit-item {
+            background: rgba(255, 234, 167, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 13px;
+        }
+        
+        .journal-template {
+            background: rgba(255,255,255,0.8);
+            border: 2px dashed #8b7765;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .journal-template h5 {
+            color: #8b7765;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .journal-template .journal-line {
+            border-bottom: 1px dotted #ccc;
+            height: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .decorative-element {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #fd79a8;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+            
+            .video-link, .meditation-link {
+                color: #fd79a8 !important;
+                background: transparent !important;
+                border: 2px solid #fd79a8 !important;
+            }
+            
+            .benefits-grid {
+                display: block;
+            }
+            
+            .benefit-item {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Página de Portada -->
+    <div class="page cover-page">
+        <div class="main-logo">
+            <h1>REIKI USUI</h1>
+            <h2>Nivel 1</h2>
+        </div>
+        <div class="module-title">
+            <h3>MÓDULO 5: MEDITACIÓN GASSHO Y CENTRADO ENERGÉTICO</h3>
+        </div>
+    </div>
+
+    <!-- Página 1: Introducción -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>◐ Meditación Gassho y Centrado Energético</h1>
+                <h2>El primer pilar que enseñó Usui Sensei</h2>
+            </div>
+            
+            <div class="quote-box" style="margin-bottom: 30px;">
+                "Donde se unen las manos, se calma la mente."
+            </div>
+            
+            <div class="highlight-box">
+                <div class="section-title">◐ MÓDULO 5: Meditación Gassho y Centrado Energético</div>
+                
+                <div class="section-subtitle">• Objetivo del módulo:</div>
+                <ul class="bullet-list">
+                    <li>Dominar la meditación Gassho como preámbulo energético a practicar Reiki.</li>
+                    <li>Calmar la mente reteniendo la presencia aquí y ahora.</li>
+                    <li>Fortalecer tu canal energético y expandir tu vibración.</li>
+                    <li>Integrar la práctica diaria para comenzar y cerrar el día en claridad.</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">♦ Contenido teórico</div>
+                
+                <div class="section-subtitle">¿Qué es Gassho?</div>
+                <div class="text-content">
+                    Gassho es una meditación con manos unidas frente al pecho (posición de oración). Enseñada por Mikao Usui como la primera práctica diaria, Gassho desarrolla <strong>enfoque, silencio interior y canal limpio</strong>.
+                </div>
+                
+                <div class="gassho-posture">
+                    <div class="posture-icon">🙏</div>
+                    <div style="color: #8b7765; font-weight: 500;">
+                        Posición tradicional Gassho<br>
+                        <small style="font-style: italic;">Palmas unidas frente al corazón</small>
+                    </div>
+                </div>
+                
+                <div class="section-subtitle">Beneficios principales</div>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <strong>Silencia el diálogo interno</strong>
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Mejora la concentración</strong>
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Potencia la conexión espiritual</strong>
+                    </div>
+                    <div class="benefit-item">
+                        <strong>Eficaz para todos los niveles</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 2: Instrucciones Prácticas -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>※ Instrucciones Prácticas</h1>
+            </div>
+            
+            <div class="step-section">
+                <h4>※ Preparación del espacio</h4>
+                <ul class="bullet-list">
+                    <li>Lugar silencioso y cómodo.</li>
+                    <li>Si lo deseas, encendé una vela o sahumar con incienso suave.</li>
+                    <li>Podés reproducir música muy baja (528 Hz o sonidos naturales), aunque no es necesario.</li>
+                </ul>
+            </div>
+            
+            <div class="step-section">
+                <h4>✦ Paso a paso</h4>
+                <ol class="numbered-list">
+                    <li>Sentate erguida/o, espalda recta pero relajada.</li>
+                    <li>Cerrá los ojos y uní las palmas en posición de oración frente al corazón o un poco más arriba.</li>
+                    <li>Enfocá la atención en el punto donde se tocan los dedos medio, sin forzar presión.</li>
+                    <li>Respirá normalmente, inhalá y exhalá con atención. La mente que divaga vuelve suavemente al punto focal.</li>
+                    <li>Permanecé así de <strong>5 a 15 minutos</strong> (o adaptá el tiempo a tu rutina).</li>
+                    <li>Finalizá con una reverencia suave (Gassho); abrí los ojos lentamente.</li>
+                </ol>
+            </div>
+            
+            <div class="exercise-box">
+                <div class="exercise-title">◊ Ejercicio de integración</div>
+                <div class="text-content">
+                    <strong>Diariamente, por 7 días:</strong>
+                </div>
+                <ul class="bullet-list">
+                    <li>Practica Gassho por <strong>5–10 minutos</strong>, preferentemente mañana y noche.</li>
+                    <li>En tu cuaderno Reiki, registra:</li>
+                </ul>
+                
+                <div class="journal-template">
+                    <h5>• Estado emocional previo:</h5>
+                    <div class="journal-line"></div>
+                    <h5>• Pensamientos recurrentes:</h5>
+                    <div class="journal-line"></div>
+                    <h5>• Sensaciones (calor, cosquilleo, silencio interno):</h5>
+                    <div class="journal-line"></div>
+                    <h5>• Nivel de claridad mental tras la práctica:</h5>
+                    <div class="journal-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 3: Videos y Aplicación -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="page-header">
+                <h1>▶ Meditaciones Guiadas</h1>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">▶ Meditaciones guiadas verificadas</div>
+                
+                <div class="text-content">
+                    Verás cómo se hace la postura, su significado y guía paso a paso: ideal como apoyo visual.
+                </div>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <a href="https://www.youtube.com/watch?v=ztqWGphX2Ms" target="_blank" class="meditation-link">→ Meditación Gassho Guiada</a>
+                </div>
+                
+                <div class="section-subtitle">Otros videos útiles:</div>
+                <ul class="bullet-list">
+                    <li><strong>Guided Gassho Reiki Meditation</strong> (subtitulado, 10 min)</li>
+                </ul>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <a href="https://www.youtube.com/watch?v=liF8BNKwBy0" target="_blank" class="video-link">→ Video Tutorial Gassho</a>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">◊ Aplicación práctica</div>
+                
+                <ul class="bullet-list">
+                    <li>Usa Gassho como inicio y cierre de tus prácticas Reiki.</li>
+                    <li>Podés recitar mentalmente uno o todos los Principios Reiki mientras meditás. Algunos practicantes enfocan un principio por día durante Gassho.</li>
+                    <li>Con el tiempo, Gassho puede convertirse en ancla de presencia: al unir las manos, la mente se aquieta.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página 4: Cierre del Módulo -->
+    <div class="page content-page">
+        <div class="content">
+            <div class="quote-box">
+                ♦ Frase energética del módulo:<br><br>
+                "Donde el silencio interior nace, florece la claridad del canal."
+            </div>
+            
+            <div class="checklist">
+                <h4>✓ Actividades programadas</h4>
+                <ul>
+                    <li>Realizar la <strong>meditación Gassho</strong> por 7 días seguidos (mínimo diaria).</li>
+                    <li>Registrar la experiencia en tu diario Reiki.</li>
+                    <li>Usar Gassho antes del autotratamiento o de dar Reiki a otros.</li>
+                    <li>Puedes experimentar agregando un principio Reiki por sesión.</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="section-title">※ Recordatorio importante</div>
+                <div class="text-content">
+                    La meditación Gassho es la base de toda práctica Reiki. No se trata de lograr un estado especial, sino de cultivar la presencia y el silencio interior que permiten que la energía fluya naturalmente.
+                </div>
+                <div class="text-content">
+                    <strong>Practica con constancia, no con perfección.</strong> Cada momento de quietud es un regalo para tu evolución espiritual.
+                </div>
+            </div>
+            
+            <div class="decorative-element">
+                ◐ ∗ ◦ ✧ ◦ ∗ ◐
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px; color: #8b7765; font-style: italic;">
+                En el silencio de las manos unidas<br>
+                ※ Encuentra la paz que siempre ha estado ahí ※
+            </div>
+        </div>
+    </div>
+</body>
+</html>
